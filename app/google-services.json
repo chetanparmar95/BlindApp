@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "22474142608",
+    "firebase_url": "https://appforblind-66084.firebaseio.com",
+    "project_id": "appforblind-66084",
+    "storage_bucket": "appforblind-66084.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22474142608:android:24bb97e8bba0008e",
+        "android_client_info": {
+          "package_name": "com.example.appforblind"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22474142608-o93v0osv8h5id7kan7cg7o52qmpa6ke5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASOiM_DIlw6PdcgPg0i-uaEmuZvClYybI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

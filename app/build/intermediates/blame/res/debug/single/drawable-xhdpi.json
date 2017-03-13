@@ -1,6 +1,10 @@
 [
     {
-        "merged": "/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_launcher.png",
-        "source": "/Users/chetan/AndroidStudioProjects/AppForBlind/app/src/main/res/drawable-xhdpi/ic_launcher.png"
+        "merged": "E:\\Aagam\\BlindApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_launcher.png",
+        "source": "E:\\Aagam\\BlindApp\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\Users\\chetan\\AndroidStudioProjects\\AppForBlind\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_launcher.png",
+        "source": "E:\\Users\\chetan\\AndroidStudioProjects\\AppForBlind\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
     }
 ]

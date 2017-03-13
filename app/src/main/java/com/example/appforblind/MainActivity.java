@@ -104,8 +104,6 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
                 tts.speak("Not able to get location try again", TextToSpeech.QUEUE_FLUSH, null);
             }
         }
-
-
     }
 
 
@@ -307,7 +305,19 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
                         }
                     }
 
+                     if (result.get(0).equalsIgnoreCase("start tracking")){
 
+                         startService(new Intent(this, LocationUploadService.class));
+                         tts.speak("Starting Tracking", TextToSpeech.QUEUE_FLUSH, null);
+
+                     }
+
+                    if (result.get(0).equalsIgnoreCase("stop tracking")){
+
+                        stopService(new Intent(this, LocationUploadService.class));
+                        tts.speak("Stop Tracking", TextToSpeech.QUEUE_FLUSH, null);
+
+                    }
 
                 
             }

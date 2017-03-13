@@ -1,6 +1,10 @@
 [
     {
-        "merged": "/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/res/merged/debug/menu/main.xml",
-        "source": "/Users/chetan/AndroidStudioProjects/AppForBlind/app/src/main/res/menu/main.xml"
+        "merged": "E:\\Aagam\\BlindApp\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
+        "source": "E:\\Aagam\\BlindApp\\app\\src\\main\\res\\menu\\main.xml"
+    },
+    {
+        "merged": "E:\\Users\\chetan\\AndroidStudioProjects\\AppForBlind\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
+        "source": "E:\\Users\\chetan\\AndroidStudioProjects\\AppForBlind\\app\\src\\main\\res\\menu\\main.xml"
     }
 ]

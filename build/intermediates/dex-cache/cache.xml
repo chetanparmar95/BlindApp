@@ -2,85 +2,139 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.2.0/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="E:\Aagam\BlindApp\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
-        revision="25.0.0"
-        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
-        <dex dex="/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.2.0_f2f328574fa676258b66c73d101688babdb4bae3/classes.dex" />
+        revision="24.0.1"
+        sha1="f9b41622897665678d31d78e57a361cb0cebcb0d">
+        <dex dex="E:\Aagam\BlindApp\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-24.2.0_94140697a2d9c542f5d0d80bea8be6ee40c2112b.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="E:\Aagam\BlindApp\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
         optimize="true"
-        revision="25.0.0"
-        sha1="56684d18149101cf73398053a55f9dad64a3bca3">
-        <dex dex="/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_f8fed17c045249a2bc355902efc72dab6d31bfdf/classes.dex" />
+        revision="24.0.1"
+        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
+        <dex dex="E:\Aagam\BlindApp\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_5157c05eb7851687229a946d828cfd23c86a4d94.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.2.0/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="E:\Aagam\BlindApp\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
-        revision="25.0.0"
-        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
-        <dex dex="/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.2.0_7ea1cb56abcf4d1e07ab5b83dddf1feb03eca8ff/classes.dex" />
+        revision="24.0.1"
+        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
+        <dex dex="E:\Aagam\BlindApp\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.0_065800d1b20c3c2678724c5ac3c00ea4d342ec0d.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/chetan/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.2.0/support-annotations-25.2.0.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="E:\Aagam\BlindApp\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.0\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
-        revision="25.0.0"
-        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
-        <dex dex="/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.2.0_c25111ac93d4e05136e90ff76821f567b045ba20/classes.dex" />
+        revision="24.0.1"
+        sha1="c3c638be6e650b165ab9ae144857b64e82787fad">
+        <dex dex="E:\Aagam\BlindApp\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.0_bef707ef494840cda973df9d9c66f3f217a55639.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.2.0/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="E:\Aagam\BlindApp\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
         optimize="true"
-        revision="25.0.0"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.2.0_0f8fe974b337c2aea4b26d4ed425429371ecd5ec/classes.dex" />
+        revision="24.0.1"
+        sha1="045be695d968dd707691cc55d23746dbf8cf569a">
+        <dex dex="E:\Aagam\BlindApp\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_0c88298377291189f1d91999b486adb55faad1a0.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.2.0/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="E:\Aagam\BlindApp\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
-        revision="25.0.0"
-        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
-        <dex dex="/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.2.0_113c15419930f5c29acf7a68f350a66eff372fe8/classes.dex" />
+        revision="24.0.1"
+        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
+        <dex dex="E:\Aagam\BlindApp\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-24.2.0_34f205c01224a4070e54a8495b60bfa2c9f26178.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.2.0/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="E:\Aagam\BlindApp\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
         optimize="true"
-        revision="25.0.0"
-        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
-        <dex dex="/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.2.0_9765f2687a38c784c430dd27b9c8a91e94079833/classes.dex" />
+        revision="24.0.1"
+        sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
+        <dex dex="E:\Aagam\BlindApp\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_a077f8d0211ee052a091a14170f9b6245dbeecf7.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\Honey\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.0\support-annotations-24.2.0.jar"
+        jumboMode="false"
         optimize="true"
-        revision="25.0.0"
-        sha1="36bad2391e53e7eaf400dee979082f16b5949c4b">
-        <dex dex="/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_4f0d9d0685426da847c7af71bedd8e80528df640/classes.dex" />
+        revision="24.0.1"
+        sha1="6be858a75633b1f0a2d24cad740db57775cb6871">
+        <dex dex="E:\Aagam\BlindApp\app\build\intermediates\pre-dexed\debug\support-annotations-24.2.0_558600c9c1885cff3908e5ffc95ad05939241c89.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.2.0/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="E:\Aagam\BlindApp\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.0\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
-        revision="25.0.0"
-        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
-        <dex dex="/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.2.0_e2fccd4c6e760218b66900df18d015143e786a61/classes.dex" />
+        revision="24.0.1"
+        sha1="beac40bcc8a320a896dd15f5109cfcaea5e1e0e3">
+        <dex dex="E:\Aagam\BlindApp\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.2.0_ff9684247fd18cac529b0729e8c08dae6f7c3ea6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Aagam\BlindApp\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="f3ee23ef25c9a8fe3d40246d0b7097267963a612">
+        <dex dex="E:\Aagam\BlindApp\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.2.0_ecc6d0e51e8294023121f5bea75e75ceda15c13e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Aagam\BlindApp\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
+        <dex dex="E:\Aagam\BlindApp\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_5d4682d10489ecde902f5a3a960fe21c1794e188.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Aagam\BlindApp\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
+        <dex dex="E:\Aagam\BlindApp\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.0_1bbd6319932f38f69b79154606b231e02d53a654.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Aagam\BlindApp\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="6e02e34594ebe9c0501ffda8dd48497f81b82977">
+        <dex dex="E:\Aagam\BlindApp\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_1ae9a36b1e14e9cd05e0cb655481cc56265d366c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Aagam\BlindApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="45f5eda279825ff470e3f51019d374d1ef61e000">
+        <dex dex="E:\Aagam\BlindApp\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.2.0_ef634e7e22693e186a1af9b63f6e60128322f29c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Aagam\BlindApp\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
+        <dex dex="E:\Aagam\BlindApp\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-24.2.0_a263dcd9ee350ebf63238da39d020deaeaf5a83d.jar" />
     </item>
 
 </items>
