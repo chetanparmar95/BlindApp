@@ -1,50 +1,40 @@
 package com.example.appforblind;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-
-import android.content.pm.ActivityInfo;
-import android.content.pm.PackageInfo;
-import android.location.LocationManager;
-import android.os.Handler;
-
 import android.Manifest;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
-import android.content.ContentProviderOperation;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.location.Address;
 import android.location.Geocoder;
-import android.location.LocationListener;
-import android.media.AudioManager;
+import android.location.LocationManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Message;
-import android.provider.ContactsContract;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
-import android.provider.Settings;
 import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
-import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
 public class MainActivity extends Activity implements TextToSpeech.OnInitListener {
     String phoneNumber = "";
-    ArrayList<ContentProviderOperation> ops = null;
     private TextView txtSpeechInput;
     private ImageButton btnSpeak;
     private final int REQ_CODE_SPEECH_INPUT = 100;
@@ -58,9 +48,11 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
     private double lat=0.0,lng=0.0;
 
     static String name = "", number = "";
-    static String saveContact[] = new String[15];
-    String msgContent[] = {"i am busy", "not feeling well", "talk to you later", "come home right now", "lost my wallet"};
+//    static String saveContact[] = new String[15];
+//    String msgContent[] = {"i am busy", "not feeling well", "talk to you later", "come home right now", "lost my wallet"};
     private final int PERMISSION_REQUEST_CODE = 5000;
+    private SessionManager sessionManager;
+    private boolean helpDone;
 
 
 
@@ -70,21 +62,15 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         setContentView(R.layout.activity_main);
         tts = new TextToSpeech(this, this);
         txtSpeechInput = (TextView) findViewById(R.id.txtSpeechInput);
+        sessionManager = new SessionManager(MainActivity.this);
 
-        ops = new ArrayList<ContentProviderOperation>();
+//        AudioManager am = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+//        int amStreamMusicMaxVol = am.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+//        am.setStreamVolume(AudioManager.STREAM_MUSIC, amStreamMusicMaxVol, 0);
 
-        ops.add(ContentProviderOperation.newInsert(
-                ContactsContract.RawContacts.CONTENT_URI)
-                .withValue(ContactsContract.RawContacts.ACCOUNT_TYPE, null)
-                .withValue(ContactsContract.RawContacts.ACCOUNT_NAME, null)
-                .build()
-        );
 
-        AudioManager am = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-        int amStreamMusicMaxVol = am.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
-        am.setStreamVolume(AudioManager.STREAM_MUSIC, amStreamMusicMaxVol, 0);
 
-        if(!checkPermission()){
+        if(!checkLocationPermission()){
             requestPermission();
         }else{
             GPSCurrentLocation currentLocation = new GPSCurrentLocation(MainActivity.this);
@@ -104,12 +90,11 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
                 tts.speak("Not able to get location try again", TextToSpeech.QUEUE_FLUSH, null);
             }
         }
-
-
+        checkContactPermisson();
     }
 
 
-    private boolean checkPermission() {
+    private boolean checkLocationPermission() {
         int result = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
         if (result == PackageManager.PERMISSION_GRANTED) {
             return true;
@@ -118,8 +103,26 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         }
     }
 
+    private void checkContactPermisson() {
+        if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_CONTACTS) == PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_CONTACTS) == PackageManager.PERMISSION_GRANTED) {
+        } else {
+            if (!ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, Manifest.permission.READ_CONTACTS)) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    requestPermissions(new String[]{Manifest.permission.READ_CONTACTS, Manifest.permission.WRITE_CONTACTS}, 5005);
+                }
+            } else {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    requestPermissions(new String[]{Manifest.permission.READ_CONTACTS, Manifest.permission.WRITE_CONTACTS}, 5005);
+                }
+            }
+        }
+    }
+
+
+
     private void requestPermission() {
-        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
+        if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             Toast.makeText(this, "GPS permission allows us to access location data. Please allow in App Settings for additional functionality.", Toast.LENGTH_LONG).show();
         } else {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_REQUEST_CODE);
@@ -134,13 +137,16 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         switch (keyCode) {
             case KeyEvent.KEYCODE_VOLUME_UP:
                 if (action == KeyEvent.ACTION_DOWN) {
-                    promptSpeechInput();
+                    if(helpDone) {
+                        promptSpeechInput();
+                    }
                 }
                 return true;
             case KeyEvent.KEYCODE_VOLUME_DOWN:
                 if (action == KeyEvent.ACTION_DOWN) {
-
-                    promptSpeechInput();
+                    if(helpDone){
+                        promptSpeechInput();
+                    }
                 }
                 return true;
             default:
@@ -188,74 +194,68 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 
                     if (result.get(0).contains("add contact")) {
                         contacts = 2;
+                        sessionManager.addContactCount(2);
                         Log.i("Contacts ", "value" + contacts);
                         Toast.makeText(this, "Command " + result.get(0), Toast.LENGTH_SHORT).show();
 
                     }
-                    if (contacts == 2 && result.get(0).contains("name")) {
-
-                        name = result.get(0).substring(5);
-                        contacts = 3;
-                        Log.i("Contacts ", "name :" + name + "value" + contacts);
-                        Toast.makeText(this, "Command " + name, Toast.LENGTH_SHORT).show();
-                    }
-                    if (contacts == 3 && !name.equals(" ") && result.get(0).contains("number")) {
-
-                        number = result.get(0).substring(7);
-                        number = number.trim();
-                        contacts = 4;
-                        if (number.length() < 10) {
-                            contacts = 3;
+                    if (result.get(0).contains("name")) {
+                        if(sessionManager.getCount() == 2){
+                            if(result.get(0).length() > 5){
+                                name = result.get(0).substring(5);
+                                contacts = 3;
+                                sessionManager.addContactCount(3);
+                                Log.i("Contacts ", "name :" + name + "value" + contacts);
+                                Toast.makeText(this, "Command " + name, Toast.LENGTH_SHORT).show();
+                            }
+                        }else{
+                            tts.speak("Please say add contact before name",TextToSpeech.QUEUE_FLUSH,null);
                         }
-                        Log.i("Contacts ", "number :" + number.trim() + "value" + contacts);
-                        Toast.makeText(this, "Command " + number, Toast.LENGTH_SHORT).show();
                     }
-                    if (contacts == 4 && result.get(0).contains("save contact")) {
-                        try {
-                            if (name != null) {
-                                System.out.println("name" + name);
-                                ops.add(ContentProviderOperation.newInsert(
-                                        ContactsContract.Data.CONTENT_URI)
-                                        .withValueBackReference(ContactsContract.Data.RAW_CONTACT_ID, 0)
-                                        .withValue(ContactsContract.Data.MIMETYPE,
-                                                ContactsContract.CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE)
-                                        .withValue(
-                                                ContactsContract.CommonDataKinds.StructuredName.DISPLAY_NAME,
-                                                name).build()
-                                );
-                            }
+                    if (!name.equals(" ") && result.get(0).contains("number")) {
+                        if(sessionManager.getCount() == 3){
+                            if(result.get(0).length() > 7){
+                                number = result.get(0).substring(7);
+                                number = number.trim();
+                                contacts = 4;
+                                sessionManager.addContactCount(4);
 
-                            //------------------------------------------------------ Mobile Number
-                            if (number != null) {
-                                System.out.println("number" + number);
-                                ops.add(ContentProviderOperation.
-                                        newInsert(ContactsContract.Data.CONTENT_URI)
-                                        .withValueBackReference(ContactsContract.Data.RAW_CONTACT_ID, 0)
-                                        .withValue(ContactsContract.Data.MIMETYPE,
-                                                ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE)
-                                        .withValue(ContactsContract.CommonDataKinds.Phone.NUMBER, number)
-                                        .withValue(ContactsContract.CommonDataKinds.Phone.TYPE,
-                                                ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE)
-                                        .build()
-                                );
+                                if (number.length() < 6) {
+                                    contacts = 3;
+                                    sessionManager.addContactCount(3);
+                                    tts.speak("Please provide valid number",TextToSpeech.QUEUE_FLUSH,null);
+                                }
+                                Log.i("Contacts ", "number :" + number.trim() + "value" + contacts);
+                                Toast.makeText(this, "Command " + number, Toast.LENGTH_SHORT).show();
                             }
-
-                            getContentResolver().applyBatch(ContactsContract.AUTHORITY, ops);
-                            Toast.makeText(this, "Contact added", Toast.LENGTH_SHORT).show();
-                            contacts = 0;
-                            name = " ";
-                            number = " ";
-                            Log.i("Contacts ", "value" + contacts);
-                        } catch (Exception e) {
-                            e.printStackTrace();
+                        }else{
+                            tts.speak("Please say name and users actual name before number",TextToSpeech.QUEUE_FLUSH,null);
+                        }
+                    }
+                    if (result.get(0).contains("save contact")) {
+                        if(sessionManager.getCount() == 4){
+                            if(!name.equals("") && !number.equals("")){
+                                boolean saved = UserContact.addUserToContactList(MainActivity.this,name,number);
+                                if(saved){
+                                    sessionManager.addContactCount(0);
+                                    tts.speak("Contact has been successfully added to your contact list",TextToSpeech.QUEUE_FLUSH,null);
+                                }else{
+                                    tts.speak("Sorry permission is not given to add contact",TextToSpeech.QUEUE_FLUSH,null);
+                                }
+                            }else{
+                                tts.speak("Please provide name and number",TextToSpeech.QUEUE_FLUSH,null);
+                            }
+                        }else{
+                            tts.speak("Please provide name and number",TextToSpeech.QUEUE_FLUSH,null);
                         }
                     }
                     if (result.get(0).contains("call")) {
                         name = result.get(0).substring(5);
 
                         Intent intent = new Intent(Intent.ACTION_CALL);
-                        intent.setData(Uri.parse("tel:" + makeCall(name)));
-                        Log.i("Calling ", "name " + name + " number : " + makeCall(name));
+                        Toast.makeText(this, UserContact.getContactByName(MainActivity.this, name), Toast.LENGTH_SHORT).show();
+                        intent.setData(Uri.parse("tel:" + UserContact.getContactByName(MainActivity.this,name)));
+//                        Log.i("Calling ", "name " + name + " number : " + makeCall(name));
                         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                             Toast.makeText(MainActivity.this, "Please give permission to make calls", Toast.LENGTH_SHORT).show();
                             return;
@@ -300,7 +300,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
                     }
 
                     if(result.get(0).equalsIgnoreCase("where am i")){
-                        if(!checkPermission()){
+                        if(!checkLocationPermission()){
                             tts.speak("Permission is not given to this application to use location service", TextToSpeech.QUEUE_FLUSH, null);
                         }else {
                             getAddress(new GeocoderHandler());
@@ -432,8 +432,16 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 	                || result == TextToSpeech.LANG_NOT_SUPPORTED) {
 	            Log.e("TTS", "This Language is not supported");
 	        } else {
-	           
 	        	tts.speak("Welcome to Blind Application", TextToSpeech.QUEUE_FLUSH, null);
+
+                //check previous session
+                if(sessionManager.hasPreviousSession()){
+                    helpDone = true;
+                }else{
+                    sessionManager.addSession();
+                    help();
+                }
+
 	        }
 
 	    } else {
@@ -449,4 +457,35 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 	    }
 	    super.onDestroy();
 	}
+
+
+    public void help(){
+        tts.speak("To Add new contact say add contact",TextToSpeech.QUEUE_FLUSH,null);
+        waitThread();
+        tts.speak("then name and user name for example name manan",TextToSpeech.QUEUE_FLUSH,null);
+        waitThread();
+        tts.speak("then number and users number for example number 9867 541 235",TextToSpeech.QUEUE_FLUSH,null);
+        waitThread();
+        tts.speak("then say save contact",TextToSpeech.QUEUE_FLUSH,null);
+        waitThread();
+        tts.speak("To call someone say call and user name for example call manan",TextToSpeech.QUEUE_FLUSH,null);
+        waitThread();
+        tts.speak("to send message say message and user name for example message manan",TextToSpeech.QUEUE_FLUSH,null);
+        waitThread();
+        tts.speak("then say content and message for example content how are you",TextToSpeech.QUEUE_FLUSH,null);
+        waitThread();
+        tts.speak("then say send",TextToSpeech.QUEUE_FLUSH,null);
+        waitThread();
+        tts.speak("to listen current location say where am i",TextToSpeech.QUEUE_FLUSH,null);
+        waitThread();
+        tts.speak("to listen this again say help",TextToSpeech.QUEUE_FLUSH,null);
+    }
+
+    public void waitThread(){
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }

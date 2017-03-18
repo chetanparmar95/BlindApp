@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw720dp-land-v13/values-sw720dp-land-v13.xml",
+        "outputFile": "/home/osp121/Downloads/GIT/BlindApp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw720dp-land-v13/values-sw720dp-land-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 109
                 },
                 "from": {
-                    "file": "/Users/chetan/AndroidStudioProjects/AppForBlind/app/src/main/res/values-sw720dp-land/dimens.xml",
+                    "file": "/home/osp121/Downloads/GIT/BlindApp/app/src/main/res/values-sw720dp-land/dimens.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,

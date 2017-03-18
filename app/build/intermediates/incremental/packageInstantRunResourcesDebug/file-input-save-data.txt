@@ -1,21 +1,21 @@
 #Internal package file, do not edit.
-#Sun Mar 12 21:03:21 IST 2017
-2.base=/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/res/resources-debug.ap_
-5.file=/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/res/resources-debug.ap_/res/layout/activity_main.xml
+#Sat Mar 18 14:45:22 IST 2017
+2.base=/home/osp121/Downloads/GIT/BlindApp/app/build/intermediates/res/resources-debug.ap_
+5.file=/home/osp121/Downloads/GIT/BlindApp/app/build/intermediates/res/resources-debug.ap_/res/layout/activity_main.xml
 5.set=ANDROID_RESOURCE
-3.base=/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/res/resources-debug.ap_
+3.base=/home/osp121/Downloads/GIT/BlindApp/app/build/intermediates/res/resources-debug.ap_
 2.set=ANDROID_RESOURCE
-4.base=/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/res/resources-debug.ap_
+4.base=/home/osp121/Downloads/GIT/BlindApp/app/build/intermediates/res/resources-debug.ap_
 count=6
-0.file=/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/res/resources-debug.ap_/resources.arsc
-5.base=/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/res/resources-debug.ap_
+0.file=/home/osp121/Downloads/GIT/BlindApp/app/build/intermediates/res/resources-debug.ap_/res/menu/main.xml
+5.base=/home/osp121/Downloads/GIT/BlindApp/app/build/intermediates/res/resources-debug.ap_
 4.set=ANDROID_RESOURCE
-1.file=/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/res/resources-debug.ap_/AndroidManifest.xml
+1.file=/home/osp121/Downloads/GIT/BlindApp/app/build/intermediates/res/resources-debug.ap_/resources.arsc
 1.set=ANDROID_RESOURCE
-2.file=/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/res/resources-debug.ap_/res/menu/main.xml
-0.base=/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/res/resources-debug.ap_
-3.file=/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/res/resources-debug.ap_/res/drawable-xhdpi-v4/ic_launcher.png
+2.file=/home/osp121/Downloads/GIT/BlindApp/app/build/intermediates/res/resources-debug.ap_/res/layout/activity_read.xml
+0.base=/home/osp121/Downloads/GIT/BlindApp/app/build/intermediates/res/resources-debug.ap_
+3.file=/home/osp121/Downloads/GIT/BlindApp/app/build/intermediates/res/resources-debug.ap_/res/drawable-xhdpi-v4/ic_launcher.png
 3.set=ANDROID_RESOURCE
-1.base=/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/res/resources-debug.ap_
-4.file=/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/res/resources-debug.ap_/res/layout/activity_read.xml
+1.base=/home/osp121/Downloads/GIT/BlindApp/app/build/intermediates/res/resources-debug.ap_
+4.file=/home/osp121/Downloads/GIT/BlindApp/app/build/intermediates/res/resources-debug.ap_/AndroidManifest.xml
 0.set=ANDROID_RESOURCE

@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="armeabi-v7a,armeabi"
-    api-level="22"
+    abi="arm64-v8a,armeabi-v7a,armeabi"
+    api-level="23"
     density="xhdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="7616553263067"
-    token="-4091471361453910633"
+    timestamp="10585978592742"
+    token="-7082025705874522145"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="552" />
+        duration="102" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="105" />
+        duration="13" />
     <task
         name="verifier"
-        duration="1" />
+        duration="0" />
 
     <artifact
-        location="/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
+        location="/home/osp121/Downloads/GIT/BlindApp/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
         type="DEX" />
 
     <build
-        timestamp="5563354611086"
+        timestamp="8350439105751"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/outputs/apk/app-debug.apk"
+            location="/home/osp121/Downloads/GIT/BlindApp/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="7616553263067"
+        timestamp="10585978592742"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="/Users/chetan/AndroidStudioProjects/AppForBlind/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
+            location="/home/osp121/Downloads/GIT/BlindApp/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
             type="DEX" />
     </build>
 
